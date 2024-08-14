@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Translation and TTS</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Translation & Text-to-Speech</h1>
+        </header>
+        <main class="content">
+            <form id="translateForm" class="form">
+                <div class="form-group">
+                    <label for="url">Article URL:</label>
+                    <input type="url" id="url" name="url" class="input-field" required placeholder="Enter the article URL">
+                </div>
+                <div class="form-group">
+                    <label for="language">Select Language:</label>
+                    <select id="language" name="language" class="input-field" required>
+                        <option value="" disabled selected>Select a language</option>
+                        <option value="ben_Beng" data-tts="ben">Bengali</option>
+                        <option value="guj_Gujr" data-tts="guj">Gujarati</option>
+                        <option value="hin_Deva" data-tts="hin">Hindi</option>
+                        <option value="kan_Knda" data-tts="kan">Kannada</option>
+                        <option value="mal_Mlym" data-tts="mal">Malayalam</option>
+                        <option value="mar_Deva" data-tts="mar">Marathi</option>
+                        <option value="pan_Guru" data-tts="pan">Punjabi</option>
+                        <option value="tam_Taml" data-tts="tam">Tamil</option>
+                        <option value="tel_Telu" data-tts="tel">Telugu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Translate</button>
+                </div>
+            </form>
+            <div id="translationResult" class="translation-result" style="display: none;">
+                <h2>Translated Article</h2>
+                <p id="translatedText"></p>
+                
+                <div id="errorMessage" class="error-message" style="display: none;">An error occurred.</div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 Translation and TTS Service</p>
+        </footer>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
