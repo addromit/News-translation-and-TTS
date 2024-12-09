@@ -1,84 +1,228 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.container {
-    max-width: 800px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+@keyframes translateWave {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes languageTransition {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulseButton {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+body {
+    background-image: url('https://www.indiancurrents.org/files/issue/hindi-language-and-three-language-formula.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
 }
 
 .header {
+    background: linear-gradient(to right, #00bcd4, #009688); /* Gradient Background */
+    color: white;
     text-align: center;
-    margin-bottom: 20px;
+    padding: 30px 20px; /* Increased padding for better spacing */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners for a smoother look */
+    font-family: 'Arial', sans-serif; /* A clean font */
+    font-size: 2rem; /* Larger font size for prominence */
+    text-transform: uppercase; /* Uppercase text for a bold statement */
+    letter-spacing: 2px; /* Slightly increased letter spacing */
+    transition: all 0.3s ease-in-out; /* Smooth transitions for hover effects */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    left: -4px;
+    top: -4px;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #238c9e, #00e5ff); /* Subtle accent gradient */
+    z-index: -1;
+    filter: blur(30px); /* Soft background blur for a subtle effect */
+    transition: transform 0.5s ease;
+}
+
+.header:hover::before {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.header:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+    transform: translateY(-5px); /* Elevation effect on hover */
 }
 
 .header h1 {
-    font-size: 24px;
-    color: #333;
+    font-size: 2.5rem; /* Increased font size for better impact */
+    font-weight: bold;
+    letter-spacing: 3px; /* Adjust letter spacing for visual appeal */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adding a soft text shadow for better readability */
 }
 
-.form {
+
+
+.container {
+    min-width: 1500px;
+    min-height: 600px;
+    margin: 40px auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+ /* Set a minimum height to maintain size */
+} 
+
+.form-section {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background: linear-gradient(to right, #f1f8e9, #e8f5e9);
+
 }
 
-.form-group {
-    margin-bottom: 15px;
+.input, #lang {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #4db6ac;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.7);
+
 }
 
-.label {
-    font-size: 16px;
-    margin-bottom: 5px;
+.input:focus, #lang:focus {
+    outline: none;
+    border-color: #009688;
+    box-shadow: 0 0 15px rgba(0, 150, 136, 0.3);
+
 }
 
-.input-field {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#lang {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #009688 50%),
+                      linear-gradient(135deg, #009688 50%, transparent 50%);
+    background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
 }
 
-.btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+.custom-button {
+    background: linear-gradient(to right, #00bcd4, #009688);
+    color: white;
     border: none;
-    border-radius: 4px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    /* animation: pulseButton 2s infinite alternate; */
+    min-width: 1000px;
+
 }
 
-.btn:hover {
-    background-color: #0056b3;
+.custom-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s;
 }
 
-.translation-result {
+.custom-button:hover::before {
+    left: 100%;
+}
+
+.results-section {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    animation: languageTransition 0.5s ease-out;
+    min-height: 300px; /* Reserve space for translated text and audio */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out translated text and audio */
+}
+
+#translatedText {
+    background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #4db6ac;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    line-height: 1;
+    position: relative;
+    flex-grow: 1; /* Allow text area to fill remaining space */
+    overflow: auto; /* Handle overflow text gracefully */
+    min-height: 200px; /* Ensure consistent size even without content */
+}
+#translatedText::after {
+    content: '🌍';
+    position: absolute;
+    max-width: 1000px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    bottom: 10px;
+    right: 10px;
+    font-size: 30px;
+    opacity: 0.3;
+    animation: translateWave 3s infinite;
+}
+
+#audioPlayer {
+    width: 100%;
     margin-top: 20px;
+    border-radius: 10px;
+    background: rgba(0, 150, 136, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.translation-result h2 {
-    font-size: 20px;
-    color: #333;
-}
-
-.translation-result p {
-    font-size: 16px;
-    color: #555;
-}
-
-.error-message {
-    color: #ff0000;
-    font-size: 16px;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #aaa;
+@media screen and (max-width: 1000px) and (max-height: 600px){
+    .container, .form-section, .results-section {
+        border-radius: 0;
+    }
 }
