@@ -6,8 +6,12 @@
 
 This project is a **News Article Translation and Text-to-Speech (TTS)** application that allows users to translate English news articles into multiple Indian languages and listen to the translated text. Built with cutting-edge technologies like **IndicTrans**, **TTSMMS**, and **Docker**, this application is ideal for breaking language barriers in news consumption.
 
-![Translation Result1](static/screenshots/1.png)
-![Translation Result3](static/screenshots/3.png)
+<div style="display: flex; justify-content: space-around;">
+
+  <img src="static/screenshots/1.png" alt="Homepage" width="300" />
+  <img src="static/screenshots/3.png" alt="Translation Result" width="300" />
+  
+</div>
 ![Translation Result4](static/screenshots/4.png)
 ---
 
