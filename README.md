@@ -1,4 +1,4 @@
-Here’s a detailed `README.md` file for your **News Translation and TTS** project:
+
 
 ---
 
@@ -167,4 +167,4 @@ For any questions or suggestions, feel free to reach out!
 
 --- 
 
-This `README.md` provides a detailed overview and serves as documentation for your repository. Let me know if you'd like additional changes!
+
