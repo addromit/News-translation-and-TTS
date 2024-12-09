@@ -8,10 +8,11 @@ This project is a **News Article Translation and Text-to-Speech (TTS)** applicat
 
 <div style="display: flex; justify-content: space-around;">
 
-  <img src="static/screenshots/1.png" alt="Homepage" width="300" />
-  <img src="static/screenshots/3.png" alt="Translation Result" width="300" />
+  <img src="static/screenshots/1.png" alt="Homepage" width="500" />
+  <img src="static/screenshots/3.png" alt="Translation Result" width="500" />
   
 </div>
+
 ![Translation Result4](static/screenshots/4.png)
 ---
 
